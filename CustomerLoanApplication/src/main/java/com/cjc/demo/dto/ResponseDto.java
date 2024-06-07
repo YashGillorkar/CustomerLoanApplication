@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CustomerDto {
+public class ResponseDto {
 
 	private String msg;
 	private Date timestamp;
