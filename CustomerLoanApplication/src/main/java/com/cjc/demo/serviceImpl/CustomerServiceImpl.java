@@ -1,16 +1,11 @@
 package com.cjc.demo.serviceImpl;
 
-<<<<<<< HEAD
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-=======
->>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-<<<<<<< HEAD
 import com.cjc.demo.exception.InvaildAgeException;
 import com.cjc.demo.exception.InvalidAlternateMobileNumberException;
 import com.cjc.demo.exception.InvalidDateOfBirthException;
@@ -23,8 +18,7 @@ import com.cjc.demo.model.Account_Details;
 import com.cjc.demo.model.AllPersonalDocument;
 import com.cjc.demo.model.Customer_Address;
 import com.cjc.demo.model.Customer_Details;
-=======
->>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
+
 import com.cjc.demo.repository.CustomerRepository;
 import com.cjc.demo.service.CustomerService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -83,12 +77,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-	@Override
-	public AllPersonalDocument saveAllDocuments(MultipartFile addressProof, MultipartFile panCard,
-			MultipartFile incomeTax, MultipartFile addharCard, MultipartFile photo, MultipartFile signture,
-			MultipartFile bankCheque, MultipartFile salarySlips) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }
