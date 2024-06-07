@@ -40,27 +40,6 @@ public class AllPersonalDocument {
 	@Column(length = 999999999)
 	private byte[] salarySlips;
 
-	private byte addressProof;
-	@Lob
-	@Column(length = 999999999)
-	private byte panCard;
-	@Lob
-	@Column(length = 999999999)
-	private byte incomeTax;
-	@Lob
-	@Column(length = 999999999)
-	private byte addharCard;
-	@Lob
-	@Column(length = 999999999)
-	private byte photo;
-	@Lob
-	@Column(length = 999999999)
-	private byte signture;
-	@Lob
-	@Column(length = 999999999)
-	private byte bankCheque;
-	@Lob
-	@Column(length = 999999999)
-	private byte salarySlips;
+	
 
 }
