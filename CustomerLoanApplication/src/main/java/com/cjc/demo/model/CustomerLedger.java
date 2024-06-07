@@ -1,13 +1,17 @@
 package com.cjc.demo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
 @Entity
-public class Customer_Ledger {
+public class CustomerLedger {
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ledgerId;
 	private String ledgerCreatedDate;
 	private Double totalLoanAmount;
@@ -23,7 +27,6 @@ public class Customer_Ledger {
 	private String currentMonthEmiStatus;
 	private String loanEndDate;
 	private	String loanStatus;
-
 }
 
 

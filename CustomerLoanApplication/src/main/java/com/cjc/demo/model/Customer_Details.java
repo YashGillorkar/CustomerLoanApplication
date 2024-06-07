@@ -36,40 +36,37 @@ public class Customer_Details {
 	@OneToOne(cascade = CascadeType.ALL)
 	private AllPersonalDocument allpersondoc;
 	
-
 	@OneToOne(cascade = CascadeType.ALL)
 	private Customer_Address customeraddress;
-	
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private Customer_Cibil_Score customercibilscore;
-	
 
-	@OneToMany(cascade = CascadeType.ALL)
-	private Customer_Ledger customerledger;
-	
+	//@OneToOne(cascade = CascadeType.ALL)    not applicable
+	//private Customer_Cibil_Score customercibilscore;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private Customer_Medical_Info customermedicalinfo;
-	
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private Customer_Saction_Letter customersactionletter;
-	
-
-	@OneToOne(cascade = CascadeType.ALL)
-	private Customer_Verification customerverification;
-	
-
-	@OneToOne(cascade = CascadeType.ALL)
-	private FamilyDependentInfo familydependentinfo;
-	
-
-	@OneToOne(cascade = CascadeType.ALL)
-	private Gurantor_Details gurantordetail;
-	
-
-	@OneToOne(cascade = CascadeType.ALL)
-	private Loan_Disbursement loandisbursment;
+//	@OneToMany(cascade = CascadeType.ALL)    not applicable
+//	private CustomerLedger customerledger;
+//	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private Customer_Medical_Info customermedicalinfo;
+//
+//
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private Customer_Saction_Letter customersactionletter;
+//	
+//
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private CustomerVerification customerverification;
+//	
+//
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private FamilyDependentInfo familydependentinfo;	
+//
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private GurantorDetails gurantordetail;
+//	
+//
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private LoanDisbursement loandisbursment;
 
 }
