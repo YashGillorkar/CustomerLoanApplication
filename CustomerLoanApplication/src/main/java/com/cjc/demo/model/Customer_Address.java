@@ -1,7 +1,10 @@
 package com.cjc.demo.model;
 
+<<<<<<< HEAD
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+=======
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;

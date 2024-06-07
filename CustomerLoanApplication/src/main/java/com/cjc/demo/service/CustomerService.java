@@ -1,5 +1,6 @@
 package com.cjc.demo.service;
 
+<<<<<<< HEAD
 
 
 import org.springframework.web.multipart.MultipartFile;
@@ -9,8 +10,11 @@ import com.cjc.demo.model.Customer_Details;
 
 public interface CustomerService 
 {
+=======
+public interface CustomerService {
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 
-	void saveCustomerDetails(Customer_Details customer);
+	void saveData(String customerJson, String accountDetail);
 
 	AllPersonalDocument saveAllDocuments(MultipartFile addressProof, MultipartFile panCard, MultipartFile incomeTax,
 			MultipartFile addharCard, MultipartFile photo, MultipartFile signture, MultipartFile bankCheque,

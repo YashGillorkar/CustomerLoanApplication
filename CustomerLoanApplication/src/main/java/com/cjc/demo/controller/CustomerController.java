@@ -6,14 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestBody;
+=======
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+<<<<<<< HEAD
 import com.cjc.demo.dto.CustomerDto;
 import com.cjc.demo.model.AllPersonalDocument;
 import com.cjc.demo.model.Customer_Details;
+=======
+import com.cjc.demo.dto.ResponseDto;
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 import com.cjc.demo.service.CustomerService;
 
 @RestController
@@ -22,6 +29,7 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerservice;
 
+<<<<<<< HEAD
 	
 
 	
@@ -41,6 +49,14 @@ public class CustomerController {
 			return new ResponseEntity<CustomerDto>(customerdto,HttpStatus.CREATED);										
 	
 		
+=======
+	@PostMapping("/postCustomer")
+	public ResponseEntity<ResponseDto> saveCustomerDataInDatabase(@RequestPart("info") String customerJson,
+			@RequestPart("accountDetails") String accountDetail){
+		customerservice.saveData(customerJson,accountDetail);
+		ResponseDto response = new ResponseDto("Customer Data Added", new Date());
+		return new ResponseEntity<ResponseDto>(response,HttpStatus.CREATED);
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 	}
 
 }

@@ -17,6 +17,7 @@ public class AllPersonalDocument {
 	private int documentId;
 	@Lob
 	@Column(length=999999999)
+<<<<<<< HEAD
 	private byte[] addressProof;
 	@Lob
 	@Column(length=999999999)
@@ -39,5 +40,29 @@ public class AllPersonalDocument {
 	@Lob
 	@Column(length=999999999)
 	private byte[] salarySlips;
+=======
+	private byte addressProof;
+	@Lob
+	@Column(length=999999999)
+	private byte panCard;
+	@Lob
+	@Column(length=999999999)
+	private byte incomeTax;
+	@Lob
+	@Column(length=999999999)
+	private byte addharCard;
+	@Lob
+	@Column(length=999999999)
+	private byte photo;
+	@Lob
+	@Column(length=999999999)
+	private byte signture;
+	@Lob
+	@Column(length=999999999)
+	private byte bankCheque;
+	@Lob
+	@Column(length=999999999)
+	private byte salarySlips;
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 	
 }
