@@ -40,8 +40,8 @@ public class Customer_Details {
 	private Customer_Address customeraddress;
 
 
-	//@OneToOne(cascade = CascadeType.ALL)    not applicable
-	//private Customer_Cibil_Score customercibilscore;
+	@OneToOne(cascade = CascadeType.ALL)  
+	private Customer_Cibil_Score customercibilscore;
 
 
 //	@OneToMany(cascade = CascadeType.ALL)    not applicable
