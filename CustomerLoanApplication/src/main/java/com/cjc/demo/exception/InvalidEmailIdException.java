@@ -1,4 +1,4 @@
-package com.cjc.demo.exxception;
+package com.cjc.demo.exception;
 
 public class InvalidEmailIdException extends RuntimeException {
 
