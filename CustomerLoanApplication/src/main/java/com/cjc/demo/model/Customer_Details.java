@@ -27,6 +27,7 @@ public class Customer_Details {
 	private long customer_Additional_Mobile_Number;
 	private double customerAmountPaidForHome;
 	private double customerTotalLoanRequired;
+	private String customerPanCard;
 	private String loanstatus;
 	
 	@OneToOne(cascade = CascadeType.ALL)
