@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,4 +31,6 @@ public class CustomerController {
 		ResponseDto responseDto = new ResponseDto("The data has saved Successfully!", new Date());
 		return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.CREATED);
 	}
+		
+	
 }

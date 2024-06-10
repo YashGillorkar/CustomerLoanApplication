@@ -31,9 +31,6 @@ public class CustomerServiceImpl implements CustomerService {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			Customer_Details ca = mapper.readValue(customerdetails, Customer_Details.class);
-
-//			AllPersonalDocument ad = new AllPersonalDocument();
-//			ca.setAllpersondoc(ad);
 			
 			if (ca.getAllpersondoc() == null) {
 				ca.setAllpersondoc(new AllPersonalDocument());
