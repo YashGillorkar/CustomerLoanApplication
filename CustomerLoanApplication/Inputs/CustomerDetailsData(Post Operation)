@@ -1,0 +1,65 @@
+{
+  "customer_First_Name": "Yash",
+  "customer_Middle_Name": "A.",
+  "customer_Last_Name": "Doe",
+  "customerDateOfBirth": "1985-08-15",
+  "age": 38,
+  "gender": "Male",
+  "customerEmail": "shreegillorkar@gmail.com",
+  "customerPanCard": "AYAPQ924F",
+  "customer_Mobile_Number": 9876543210,
+  "customer_Additional_Mobile_Number": 9123456780,
+  "customerAmountPaidForHome": 50000.0,
+  "customerTotalLoanRequired": 150000.0,
+  "loanstatus": "Pending",
+  "customeraddress": {
+    "permanentAddress": {
+      "areaName": "ABC Colony",
+      "cityName": "XYZ City",
+      "district": "PQR District",
+      "state": "State",
+      "pincode": 123456,
+      "houseNumber": 10,
+      "streetName": "Main Street"
+    },
+    "localAddress": {
+      "areaName": "DEF Colony",
+      "cityName": "XYZ City",
+      "district": "PQR District",
+      "state": "State",
+      "pincode": 654321,
+      "houseNumber": 20,
+      "streetName": "Second Street"
+    }
+	},
+  "accountDetails": {
+    "accountType": "Savings",
+    "accountBalance": 15000.75,
+    "accountStatus": "Active",
+    "accountNumber": 1234567890123456
+  },"customermedicalinfo": {
+    "patientId": 12345,
+    "professionsalPatientName": "John Doe",
+    "billingDate": "2023-06-01",
+    "loanAmount": 15000.00,
+    "treatment": "Orthopedic Surgery"
+  },
+  "familydependentinfo": {
+    "noOfFamilyMember": 4,
+    "noOfChild": 2,
+    "maritalStatus": "Married",
+    "dependentMember": "Elderly parent",
+    "familyIncome": 50000.00
+  },
+  "gurantordetail": {
+    "guarantorName": "John Smith",
+    "guarantorDateOfBirth": "1980-05-15",
+    "guarantorRelationshipWithCustomer": "Friend",
+    "guarantorMobileNumber": 9876543210,
+    "guarantorAdharCardNo": 123456789012,
+    "guarantorMortgageDetails": "None",
+    "guarantorJobDetails": "Software Engineer",
+    "guarantorLoaclAddress": "123 Main Street, City, Country",
+    "guarantorPermanentAddress": "456 Park Avenue, City, Country"
+  }
+  }
