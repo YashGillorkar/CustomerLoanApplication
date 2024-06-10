@@ -8,11 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+<<<<<<< HEAD
 import com.cjc.demo.exception.IdNotFoundException;
+=======
+import com.cjc.demo.exception.InvaliedCustomerId;
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 import com.cjc.demo.model.AllPersonalDocument;
 import com.cjc.demo.model.CustomerVerification;
 import com.cjc.demo.model.Customer_Cibil_Score;
 import com.cjc.demo.model.Customer_Details;
+import com.cjc.demo.model.Customer_Saction_Letter;
 import com.cjc.demo.repository.CustomerRepository;
 import com.cjc.demo.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -64,6 +69,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void saveCustomerVerification(int customerId, CustomerVerification cv) {
 
 		Optional<Customer_Details> byId = customerrepository.findById(customerId);
@@ -84,4 +90,18 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
+=======
+	public void saveSactionDetails(int customerId, Customer_Saction_Letter customerSactionLetter) {
+	
+		Optional<Customer_Details> op=customerrepository.findById(customerId);
+		if(op.isPresent()) {
+			Customer_Details customer_Details = op.get();
+			customer_Details.setCustomersactionletter(customerSactionLetter);
+			customerrepository.save(customer_Details);
+		}
+		else {
+			throw new InvaliedCustomerId("invaild customer id");
+		}
+	}
+>>>>>>> branch 'master' of https://github.com/YashGillorkar/CustomerLoanApplication.git
 }
