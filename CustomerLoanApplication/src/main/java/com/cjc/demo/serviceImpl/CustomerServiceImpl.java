@@ -94,28 +94,6 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
-//	@Override
-//
-//	public void saveCustomerVerification(int customerId, CustomerVerification cv) {
-//
-//		Optional<Customer_Details> byId = customerrepository.findById(customerId);
-//
-//		if (byId.isPresent()) {
-//
-//			Customer_Details customer_Details = byId.get();
-//
-//			CustomerVerification customerVerification = customer_Details.getCustomerverification();
-//			customer_Details.setCustomerverification(customerVerification);
-//
-//			customerrepository.save(customer_Details);
-//
-//			System.out.println("Customer ID: " + customerId + " verification details saved/updated successfully.");
-//		} else {
-//
-//			throw new IdNotFoundException("ID is not present: " + customerId);
-//		}
-//	}
-
 	public void saveSactionDetails(int customerId, Customer_Saction_Letter customerSactionLetter) {
 
 		Optional<Customer_Details> op = customerrepository.findById(customerId);
