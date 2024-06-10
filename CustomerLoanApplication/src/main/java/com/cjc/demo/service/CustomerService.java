@@ -7,8 +7,8 @@ import com.cjc.demo.model.Customer_Details;
 
 public interface CustomerService {
 
-	void saveAllData(String customerdetails, String accountdetails, MultipartFile addressProof, MultipartFile panCard,
+	void saveAllData(String customerdetails, MultipartFile addressProof, MultipartFile panCard,
 			MultipartFile incomeTax, MultipartFile addharCard, MultipartFile photo, MultipartFile signture,
-			MultipartFile bankCheque, MultipartFile salarySlips, String customeraddress);
+			MultipartFile bankCheque, MultipartFile salarySlips);
 
 }
