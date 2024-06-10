@@ -66,9 +66,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-
 	public void saveCustomerVerification(int customerId, CustomerVerification cv) {
-
+		// Fetch customer details by ID
 		Optional<Customer_Details> byId = customerrepository.findById(customerId);
 
 		if (byId.isPresent()) {
@@ -76,7 +75,15 @@ public class CustomerServiceImpl implements CustomerService {
 			Customer_Details customer_Details = byId.get();
 
 			CustomerVerification customerVerification = customer_Details.getCustomerverification();
-			customer_Details.setCustomerverification(customerVerification);
+
+			if (customerVerification == null) {
+				customer_Details.setCustomerverification(cv);
+			} else {
+
+				customerVerification.setStatus(cv.getStatus());
+				customerVerification.setRemarks(cv.getRemarks());
+				customerVerification.setVerificationDate(cv.getVerificationDate());
+			}
 
 			customerrepository.save(customer_Details);
 
@@ -87,15 +94,36 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
+//	@Override
+//
+//	public void saveCustomerVerification(int customerId, CustomerVerification cv) {
+//
+//		Optional<Customer_Details> byId = customerrepository.findById(customerId);
+//
+//		if (byId.isPresent()) {
+//
+//			Customer_Details customer_Details = byId.get();
+//
+//			CustomerVerification customerVerification = customer_Details.getCustomerverification();
+//			customer_Details.setCustomerverification(customerVerification);
+//
+//			customerrepository.save(customer_Details);
+//
+//			System.out.println("Customer ID: " + customerId + " verification details saved/updated successfully.");
+//		} else {
+//
+//			throw new IdNotFoundException("ID is not present: " + customerId);
+//		}
+//	}
+
 	public void saveSactionDetails(int customerId, Customer_Saction_Letter customerSactionLetter) {
-	
-		Optional<Customer_Details> op=customerrepository.findById(customerId);
-		if(op.isPresent()) {
+
+		Optional<Customer_Details> op = customerrepository.findById(customerId);
+		if (op.isPresent()) {
 			Customer_Details customer_Details = op.get();
 			customer_Details.setCustomersactionletter(customerSactionLetter);
 			customerrepository.save(customer_Details);
-		}
-		else {
+		} else {
 			throw new InvaliedCustomerId("invaild customer id");
 		}
 	}
