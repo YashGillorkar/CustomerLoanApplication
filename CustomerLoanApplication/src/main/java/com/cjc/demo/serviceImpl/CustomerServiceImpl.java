@@ -68,7 +68,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 		if (byId.isPresent()) {
 			Customer_Details customer_Details = byId.get();
-			CustomerVerification customerVerification = customer_Details.getCustomerverification();
 			customer_Details.setCustomerverification(cv);
 			customerrepository.save(customer_Details);
 		} else {
