@@ -38,6 +38,7 @@ public class CustomerController {
 	}
 
 
+
 	@PatchMapping("/customerVerification/{customerId}")
 	public ResponseEntity<ResponseDto> customerVerification(@PathVariable int customerId,
 			@RequestBody CustomerVerification cv) {

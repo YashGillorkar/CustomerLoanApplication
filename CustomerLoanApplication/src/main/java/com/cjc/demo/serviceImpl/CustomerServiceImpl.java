@@ -19,7 +19,6 @@ import com.cjc.demo.repository.CustomerRepository;
 import com.cjc.demo.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ch.qos.logback.core.status.Status;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -70,10 +69,25 @@ public class CustomerServiceImpl implements CustomerService {
 		Optional<Customer_Details> byId = customerrepository.findById(customerId);
 
 		if (byId.isPresent()) {
+
 			Customer_Details customer_Details = byId.get();
 			cv.setVerificationDate(new Date());
 			customer_Details.setCustomerverification(cv);
+
+			CustomerVerification customerVerification = customer_Details.getCustomerverification();
+
+			if (customerVerification == null) {
+				customer_Details.setCustomerverification(cv);
+			} else {
+
+				customerVerification.setStatus(cv.getStatus());
+				customerVerification.setRemarks(cv.getRemarks());
+				customerVerification.setVerificationDate(cv.getVerificationDate());
+			}
+
 			customerrepository.save(customer_Details);
+
+			System.out.println("Customer ID: " + customerId + " verification details saved/updated successfully.");
 		} else {
 			throw new InvaliedCustomerId("ID is not present: " + customerId);
 		}
