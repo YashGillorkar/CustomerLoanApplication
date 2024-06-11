@@ -1,0 +1,23 @@
+_____________________________________________________________________________
+PUT : 
+http://localhost:3333/saveSactionDetails/52
+
+{
+    "producthomeEquity": "Home Loan",
+    "loanAmtSanctioned": 500000.00,
+    "interestType": "Fixed",
+    "rateOfInterest": 5.5,
+    "loanTenureInYear": 15,
+    "monthlyEmiAmount": 4000.00,
+    "modeOfPayment": "Direct Debit",
+    "status" : "Rejected"
+}
+
+_______________________________________________________________________________
+
+PATCH : 
+http://localhost:3333/customerVerification/103
+{  
+  "status": "Completed",
+  "remarks": "Verification successful"
+}

@@ -112,6 +112,7 @@ public class CustomerServiceImpl implements CustomerService {
 			} else {
 				customerSactionLetter.setStatus("REJECTED");
 			}
+			customerSactionLetter.setTermsCondition("The Loan has Sactioned..! The given is valid for 15 days.. ");
 
 			customer_Details.setCustomersactionletter(customerSactionLetter);
 			customerrepository.save(customer_Details);
