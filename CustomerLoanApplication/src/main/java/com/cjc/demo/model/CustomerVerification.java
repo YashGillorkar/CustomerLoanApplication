@@ -1,5 +1,7 @@
 package com.cjc.demo.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +14,7 @@ public class CustomerVerification {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int verificationId;
-	private String verificationDate;
+	private Date verificationDate;
 	private String status;
 	private String remarks;
 

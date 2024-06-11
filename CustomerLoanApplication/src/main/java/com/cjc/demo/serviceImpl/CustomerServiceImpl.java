@@ -1,6 +1,7 @@
 package com.cjc.demo.serviceImpl;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import com.cjc.demo.model.Customer_Saction_Letter;
 import com.cjc.demo.repository.CustomerRepository;
 import com.cjc.demo.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import ch.qos.logback.core.status.Status;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -68,10 +71,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 		if (byId.isPresent()) {
 			Customer_Details customer_Details = byId.get();
+			cv.setVerificationDate(new Date());
 			customer_Details.setCustomerverification(cv);
 			customerrepository.save(customer_Details);
 		} else {
-
 			throw new InvaliedCustomerId("ID is not present: " + customerId);
 		}
 	}
@@ -81,6 +84,21 @@ public class CustomerServiceImpl implements CustomerService {
 		Optional<Customer_Details> op = customerrepository.findById(customerId);
 		if (op.isPresent()) {
 			Customer_Details customer_Details = op.get();
+			customerSactionLetter.setSanctionDate(new Date());
+			customerSactionLetter.setApplicantName(customer_Details.getCustomer_First_Name() + " "
+					+ customer_Details.getCustomer_Middle_Name() + " " + customer_Details.getCustomer_Last_Name());
+			customerSactionLetter.setContactDetails(customer_Details.getCustomer_Mobile_Number());
+			String stauts = customerSactionLetter.getStatus();
+			if (stauts.equalsIgnoreCase("created")) {
+				customerSactionLetter.setStatus("CREATED");
+			} else if (stauts.equalsIgnoreCase("offered")) {
+				customerSactionLetter.setStatus("OFFERED");
+			} else if (stauts.equalsIgnoreCase("accepted")) {
+				customerSactionLetter.setStatus("ACCEPTED");
+			} else {
+				customerSactionLetter.setStatus("REJECTED");
+			}
+
 			customer_Details.setCustomersactionletter(customerSactionLetter);
 			customerrepository.save(customer_Details);
 		} else {

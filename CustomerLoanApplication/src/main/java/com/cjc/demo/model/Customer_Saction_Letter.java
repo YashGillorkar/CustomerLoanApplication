@@ -1,5 +1,7 @@
 package com.cjc.demo.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,9 +14,9 @@ public class Customer_Saction_Letter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int sanctionId;
-	private String sanctionDate;
+	private Date sanctionDate;
 	private String applicantName;
-	private Double contactDetails;
+	private long contactDetails;
 	private String producthomeEquity;
 	private Double loanAmtSanctioned;
 	private String interestType;
