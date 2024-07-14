@@ -69,9 +69,7 @@
  http://lenovo:3333/saveSactionDetails/2
  Request Body:-
  {
-  "sanctionDate": "2001-04-22",
-  "applicantName": "John Doe",
-  "contactDetails": 1234567890,
+  
   "producthomeEquity": "Home Equity Loan",
   "loanAmtSanctioned": 50000.00,
   "interestType": "Fixed",
@@ -80,7 +78,6 @@
   "monthlyEmiAmount": 943.98,
   "modeOfPayment": "Auto Debit",
   "remarks": "No remarks",
-  "termsCondition": "Agreed to terms and conditions",
   "status": "Active"
 }
   
