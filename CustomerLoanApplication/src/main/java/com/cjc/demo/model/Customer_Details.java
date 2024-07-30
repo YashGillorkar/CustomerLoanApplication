@@ -25,7 +25,7 @@ public class Customer_Details {
 	private String customerEmail;
 	private long customer_Mobile_Number;
 	private long customer_Additional_Mobile_Number;
-	private double customerAmountPaidForHome;
+	private double customerAmountPaidForCar;
 	private double customerTotalLoanRequired;
 	
 	@Column(unique=true)
