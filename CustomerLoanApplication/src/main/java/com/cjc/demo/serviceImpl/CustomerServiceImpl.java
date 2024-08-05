@@ -19,7 +19,6 @@ import com.cjc.demo.repository.CustomerRepository;
 import com.cjc.demo.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -43,13 +42,20 @@ public class CustomerServiceImpl implements CustomerService {
 			}
 			AllPersonalDocument alldocument = ca.getAllpersondoc();
 
-			alldocument.setAddressProof(addressProof.getBytes());
-			alldocument.setPanCard(panCard.getBytes());
-			alldocument.setIncomeTax(incomeTax.getBytes());
-			alldocument.setAddharCard(addharCard.getBytes());
-			alldocument.setPhoto(photo.getBytes());
-			alldocument.setSignture(signture.getBytes());
-			alldocument.setBankCheque(bankCheque.getBytes());
+			if (addressProof != null)
+				alldocument.setAddressProof(addressProof.getBytes());
+			if (panCard != null)
+				alldocument.setPanCard(panCard.getBytes());
+			if (incomeTax != null)
+				alldocument.setIncomeTax(incomeTax.getBytes());
+			if (addharCard != null)
+				alldocument.setAddharCard(addharCard.getBytes());
+			if (photo != null)
+				alldocument.setPhoto(photo.getBytes());
+			if (signture != null)
+				alldocument.setSignture(signture.getBytes());
+			if (bankCheque != null)
+				alldocument.setBankCheque(bankCheque.getBytes());
 			alldocument.setSalarySlips(salarySlips.getBytes());
 
 			String url = "http://localhost:1111/getCibilByPAN/" + ca.getCustomerPanCard();

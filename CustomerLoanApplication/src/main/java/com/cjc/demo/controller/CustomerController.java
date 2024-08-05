@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.cjc.demo.model.CustomerVerification;
 import com.cjc.demo.model.Customer_Saction_Letter;
 import com.cjc.demo.service.CustomerService;
 
+@CrossOrigin("*")
 @RestController
 public class CustomerController {
 
@@ -27,10 +29,10 @@ public class CustomerController {
 
 	@PostMapping("insertAllData")
 	public ResponseEntity<ResponseDto> PostData(@RequestPart("customerDetails") String customerdetails,
-			@RequestPart("addrprof") MultipartFile addressProof, @RequestPart("pan") MultipartFile panCard,
-			@RequestPart("incometax") MultipartFile incomeTax, @RequestPart("adhar") MultipartFile addharCard,
-			@RequestPart("photo") MultipartFile photo, @RequestPart("signature") MultipartFile signture,
-			@RequestPart("bankCheque") MultipartFile bankCheque, @RequestPart("slips") MultipartFile salarySlips) {
+			@RequestPart(value ="addrprof"  )MultipartFile addressProof, @RequestPart(value ="pan") MultipartFile panCard,
+			@RequestPart(value ="incometax") MultipartFile incomeTax, @RequestPart(value ="adhar") MultipartFile addharCard,
+			@RequestPart(value="photo") MultipartFile photo, @RequestPart(value ="signature") MultipartFile signture,
+			@RequestPart(value ="bankCheque") MultipartFile bankCheque, @RequestPart("slips") MultipartFile salarySlips) {
 		customerservice.saveAllData(customerdetails, addressProof, panCard, incomeTax, addharCard, photo, signture,
 				bankCheque, salarySlips);
 		ResponseDto responseDto = new ResponseDto("The data has saved Successfully!", new Date());
